@@ -393,6 +393,10 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/scripts/Control.cs"
 "Assets/scripts/ControlJugador.cs"
+"Assets/scripts/EnemigoMovimiento.cs"
+"Assets/scripts/Enemy/EnemyMoveAlways.cs"
+"Assets/scripts/Enemy/EnemyWaypointMove.cs"
+"Assets/scripts/StateMachine.cs"
 -langversion:9.0
 /deterministic
 /optimize+
