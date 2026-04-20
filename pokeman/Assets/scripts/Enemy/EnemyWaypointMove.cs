@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyPatrol : MonoBehaviour
+public class EnemyWaypointMove : MonoBehaviour
 {
     NavMeshAgent agent;
     [SerializeField] private Transform[] wayPoints;
@@ -12,10 +12,10 @@ public class EnemyPatrol : MonoBehaviour
     private bool isWaiting;
 
     private Transform EnemyTransform;
-    //private Transform Player;
-    //private float distance;
+    private Transform Player;
+    private float distance;
     private StateMachine StateMach;
-    //[SerializeField] private float PersecutionDistance;
+    [SerializeField] private float PersecutionDistance;
 
     void OnEnable()
     {
@@ -24,17 +24,17 @@ public class EnemyPatrol : MonoBehaviour
         agent.updateUpAxis = false;
 
         StateMach = GetComponent<StateMachine>();
-        //Player = GameObject.FindWithTag("Player").transform;
+        Player = GameObject.FindWithTag("Player").transform;
         EnemyTransform = GetComponent<Transform>();
 
-        //currentWaypoint = 0;
+        currentWaypoint = 0;
         agent.SetDestination(wayPoints[currentWaypoint].position);
     }
 
 
     void Update()
     {
-        //Distance();
+        Distance();
 
         if (!agent.pathPending && agent.remainingDistance < 0.1f && !isWaiting)
         {
@@ -55,17 +55,17 @@ public class EnemyPatrol : MonoBehaviour
         //gire los ojos del enemigo hacia el siguiente waypoint
     }
 
-    // private void Flip(){
+    private void Flip(){
 
-    //     if (transform.position.x > wayPoints[currentWaypoint].position.x)
-    //     {
-    //         transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-    //     }
-    //     else{
+        if (transform.position.x > wayPoints[currentWaypoint].position.x)
+        {
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+        else{
 
-    //         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-    //     }
-    // }
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+     }
 
     void SetNextWaypoint()
     {
@@ -73,19 +73,19 @@ public class EnemyPatrol : MonoBehaviour
         agent.SetDestination(wayPoints[currentWaypoint].position);
     }
 
-    //   private void Distance(){
+       private void Distance(){
 
-    //     if (Player != null && EnemyTransform != null)
-    //     {
-    //         // Calcula la distancia entre el player y la hormiga.
-    //         distance = Vector3.Distance(Player.position, EnemyTransform.position);
+        if (Player != null && EnemyTransform != null)
+        {
+            // Calcula la distancia entre el player y la hormiga.
+            distance = Vector3.Distance(Player.position, EnemyTransform.position);
             
-    //     }
+        }
 
-    //     if(distance < PersecutionDistance)
-    //     {
+        if(distance < PersecutionDistance)
+        {
 
-    //         StateMach.ActivateState(StateMach.stateArray[1]);
-    //     }
-    // }
+            StateMach.ActivateState(StateMach.stateArray[1]);
+        }
+    }
 }

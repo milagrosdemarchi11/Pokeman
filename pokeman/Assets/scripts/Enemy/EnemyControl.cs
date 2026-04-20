@@ -15,6 +15,19 @@ public class EnemyControl : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player"))
+
+        { 
+            collision.gameObject.GetComponent<ControlJugador>().RecibeDaño(1);
+            Debug.Log("Daño recibido por el jugador");
+        }
+
+    }
+    
 
     
     private void Update()

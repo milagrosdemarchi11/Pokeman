@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ControlJugador : MonoBehaviour
@@ -11,7 +12,14 @@ public class ControlJugador : MonoBehaviour
 
     public Animator animator;
     private SpriteRenderer spriteRenderer;
-  
+
+    private bool recibiendoDaño;
+    public bool muerto = false;
+    public int vida = 1;
+
+    //private ShotPlayer rayoScript;
+
+    public bool tieneRayo = false;
 
     void Start()
     {
@@ -19,36 +27,36 @@ public class ControlJugador : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Esto bloquea que gire, por más que choque
+        //rayoScript = GetComponent<ShotPlayer>();
+
         rb.gravityScale = 0f;
-        rb.freezeRotation = true; 
+        rb.freezeRotation = true;
+
+        //rayoScript.enabled = false; // empieza apagado
     }
 
     void Update()
     {
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
-        //entrada = new Vector2(moveX, moveY).normalized;
 
         if (moveX != 0)
-        {   
+        {
             entrada = new Vector2(moveX, 0);
         }
-
         else if (moveY != 0)
         {
             entrada = new Vector2(0, moveY);
         }
-
         else
         {
             entrada = Vector2.zero;
         }
 
-
         Move();
         UpdateAnimations();
-        
+
+
     }
 
     private void Move()
@@ -58,49 +66,27 @@ public class ControlJugador : MonoBehaviour
             animator.SetFloat("MoveX", entrada.x);
             animator.SetFloat("MoveY", entrada.y);
         }
-
     }
 
     private void UpdateAnimations()
     {
-        // Giro de imagen
         if (entrada.x > 0)
-        {
             spriteRenderer.flipX = false;
-        }
         else if (entrada.x < 0)
-        {
             spriteRenderer.flipX = true;
-        }
 
         if (entrada.y > 0)
-        {
             spriteRenderer.flipY = false;
-        }
         else if (entrada.y < 0)
-        {
             spriteRenderer.flipY = true;
-        }
 
-        // para que quede bien el Idle del Pj
-
-            if (moveY == 0)
-        {
+        if (moveY == 0)
             spriteRenderer.flipY = false;
-        }
 
-        // Animación (se mueve solo si hay entrada)
-        if (entrada.magnitude > 0.1f) 
-        {
+        if (entrada.magnitude > 0.1f)
             animator.speed = 1f;
-        }
-        
-        else 
-        {
+        else
             animator.speed = 0f;
-        }
-
-
     }
 
     public Vector2 ObtenerDireccion()
@@ -111,15 +97,59 @@ public class ControlJugador : MonoBehaviour
         return new Vector2(1, 0);
     }
 
-
-
     void FixedUpdate()
     {
-        // USO DE 'velocity' PARA EVITAR EL ERROR ROJO
         rb.velocity = entrada * velocidad;
-        
-        // Refuerzo para que no rote ni un grado
         rb.rotation = 0f;
         rb.angularVelocity = 0f;
+    }
+
+    // ⚡ PODER DEL RAYO
+    public void ActivarRayo()
+    {
+        if (!tieneRayo)
+        {
+            StartCoroutine(RayoPorTiempo());
+        }
+    }
+
+   public void RecibeDaño (int cantDaño)
+   {
+     if (!recibiendoDaño)
+     { 
+        recibiendoDaño = true;
+        vida -= cantDaño;
+
+        if (vida<=0)
+        { 
+            Debug.Log("Jugador muerto");
+            muerto=true;
+        }  
+
+        //Vector2 rebote = new Vector2 (transform.position.x - direccion.x, 0.2f).normalized;
+       // rb.Addforce(rebote* fuerzaRenote, ForceMode2D.Impulse);
+     }
+
+    }
+
+    
+
+    IEnumerator RayoPorTiempo()
+    {
+        tieneRayo = true;
+        Debug.Log("Rayo activado");
+
+        //rayoScript.enabled = true;
+
+        // acá podés activar efectos (partículas, animación, etc)
+
+        yield return new WaitForSeconds(10f);
+
+        tieneRayo = false;
+        Debug.Log("Rayo desactivado");
+
+        //rayoScript.enabled = false;
+
+        // acá desactivás el efecto
     }
 }
