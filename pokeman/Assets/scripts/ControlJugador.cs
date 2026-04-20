@@ -103,6 +103,14 @@ public class ControlJugador : MonoBehaviour
 
     }
 
+    public Vector2 ObtenerDireccion()
+    {
+        if (entrada != Vector2.zero)
+            return entrada;
+
+        return new Vector2(1, 0);
+    }
+
 
 
     void FixedUpdate()
