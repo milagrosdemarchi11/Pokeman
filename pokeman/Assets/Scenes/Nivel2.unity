@@ -336,7 +336,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1590,7 +1590,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1962,7 +1962,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3222,16 +3222,6 @@ Tilemap:
       m_TileIndex: 3
       m_TileSpriteIndex: 3
       m_TileMatrixIndex: 4
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -14, y: -10, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -4536,16 +4526,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -14, y: 9, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -13, y: 9, z: 0}
     second:
       serializedVersion: 2
@@ -4834,13 +4814,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6c546a2db72aa0b4d9e9b2c78f6e453c, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: c82b5158e6bab584cb66b8c20ab07170, type: 2}
-  - m_RefCount: 45
+  - m_RefCount: 44
     m_Data: {fileID: 11400000, guid: 67a695b3576a52d428bbeffe14a9d4d7, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 5544253c0c437bb419d8211ac087949f, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 0f7c218bb743c0642bc242d074b3c046, type: 2}
-  - m_RefCount: 41
+  - m_RefCount: 40
     m_Data: {fileID: 11400000, guid: e922e70af471e594faa96290bf4797ee, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: da89ea3080ad95e48b908c8b23cf9129, type: 2}
@@ -4853,20 +4833,20 @@ Tilemap:
     m_Data: {fileID: -54064779, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 853394365, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
-  - m_RefCount: 45
+  - m_RefCount: 44
     m_Data: {fileID: -1606821518, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 706532460, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 534344936, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
-  - m_RefCount: 41
+  - m_RefCount: 40
     m_Data: {fileID: 649263788, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 1309150510, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
   - m_RefCount: 22
     m_Data: {fileID: 290488428, guid: a81e6633b0da44343a438c1f51028a38, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 116
+  - m_RefCount: 114
     m_Data:
       e00: 1
       e01: 0
@@ -4993,7 +4973,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 162
+  - m_RefCount: 160
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -5465,7 +5445,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5795,7 +5775,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -6204,7 +6184,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
