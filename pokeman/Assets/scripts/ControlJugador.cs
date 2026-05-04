@@ -19,7 +19,16 @@ public class ControlJugador : MonoBehaviour
 
     //private ShotPlayer rayoScript;
 
-    public bool tieneRayo = false;
+    public bool tienePoder = false;
+    private Coroutine parpadeoCoroutine;
+
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioClip musicaNormal;
+    [SerializeField] private AudioClip musicaPoder;
+
+    private Coroutine musicaCoroutine;
 
     void Start()
     {
@@ -31,6 +40,10 @@ public class ControlJugador : MonoBehaviour
 
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
+
+        musicSource.volume = 1f;
+        musicSource.clip = musicaNormal;
+        musicSource.Play();
 
         //rayoScript.enabled = false; // empieza apagado
     }
@@ -104,52 +117,105 @@ public class ControlJugador : MonoBehaviour
         rb.angularVelocity = 0f;
     }
 
-    // ⚡ PODER DEL RAYO
-    public void ActivarRayo()
+    //PODER DEL RAYO
+    public void ActivarPoder()
     {
-        if (!tieneRayo)
+        if (!tienePoder)
         {
-            StartCoroutine(RayoPorTiempo());
+            StartCoroutine(PoderPorTiempo());
         }
     }
 
-   public void RecibeDaño (int cantDaño)
-   {
-     if (!recibiendoDaño)
-     { 
-        recibiendoDaño = true;
-        vida -= cantDaño;
+    public void RecibeDaño(int cantDaño)
+    {
+        if (!recibiendoDaño)
+        {
+            recibiendoDaño = true;
+            vida -= cantDaño;
 
-        if (vida<=0)
-        { 
-            Debug.Log("Jugador muerto");
-            muerto=true;
-        }  
+            if (vida <= 0)
+            {
+                Debug.Log("Jugador muerto");
+                muerto = true;
+            }
 
-        //Vector2 rebote = new Vector2 (transform.position.x - direccion.x, 0.2f).normalized;
-       // rb.Addforce(rebote* fuerzaRenote, ForceMode2D.Impulse);
-     }
+            //Vector2 rebote = new Vector2 (transform.position.x - direccion.x, 0.2f).normalized;
+            // rb.Addforce(rebote* fuerzaRenote, ForceMode2D.Impulse);
+        }
 
     }
 
-    
 
-    IEnumerator RayoPorTiempo()
+
+    IEnumerator PoderPorTiempo()
     {
-        tieneRayo = true;
-        Debug.Log("Rayo activado");
+        tienePoder = true;
+        //Debug.Log("Rayo activado");
+
+        if (musicaCoroutine != null)
+            StopCoroutine(musicaCoroutine);
+
+        musicaCoroutine = StartCoroutine(CambiarMusica(musicaPoder));
+
+        // arrancar parpadeo
+        parpadeoCoroutine = StartCoroutine(Parpadear());
 
         //rayoScript.enabled = true;
 
         // acá podés activar efectos (partículas, animación, etc)
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
 
-        tieneRayo = false;
-        Debug.Log("Rayo desactivado");
+        tienePoder = false;
+        //Debug.Log("Rayo desactivado");
+
+        if (musicaCoroutine != null)
+            StopCoroutine(musicaCoroutine);
+
+        musicaCoroutine = StartCoroutine(CambiarMusica(musicaNormal));
+
+        // detener parpadeo
+        if (parpadeoCoroutine != null)
+            StopCoroutine(parpadeoCoroutine);
+
+        spriteRenderer.color = Color.white;
 
         //rayoScript.enabled = false;
 
         // acá desactivás el efecto
+    }
+
+    IEnumerator Parpadear()
+    {
+        while (true)
+        {
+            //spriteRenderer.color = Color.yellow; // podés cambiar color
+            spriteRenderer.color = new Color(1f, 1f, 0f, 0.5f);
+            yield return new WaitForSeconds(0.2f);
+
+            //spriteRenderer.color = Color.white;
+            spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    IEnumerator CambiarMusica(AudioClip nueva)
+    {
+        // fade out
+        for (float v = 1; v > 0; v -= Time.deltaTime * 2)
+        {
+            musicSource.volume = v;
+            yield return null;
+        }
+
+        musicSource.clip = nueva;
+        musicSource.Play();
+
+        // fade in
+        for (float v = 0; v < 1; v += Time.deltaTime * 2)
+        {
+            musicSource.volume = v;
+            yield return null;
+        }
     }
 }

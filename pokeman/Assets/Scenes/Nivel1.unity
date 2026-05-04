@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!1 &176456318
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &199306771
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &306774639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &355615172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,6 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!1 &736696509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &843815321
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +3264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &986334351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,6 +3462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &1079072321
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,6 +3654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &1146174972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!1 &1236470320
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,7 +4012,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb6cf42bc13f5764cb4bb4ffbc3c4f00, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.292
   m_Pitch: 1
   Loop: 1
@@ -4401,6 +4411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &1684592618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4594,6 +4605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &1761770611
 GameObject:
   m_ObjectHideFlags: 0
@@ -4782,6 +4794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &1846612553 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5880803673174973710, guid: 08a01da4618b639489d079d5bca9ec24, type: 3}
@@ -4800,6 +4813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!1 &1863687449
 GameObject:
   m_ObjectHideFlags: 0
@@ -6282,6 +6296,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5863277532558854957, guid: 213dda6ca4ba41142b4228c4f5d7fb1c, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1351780154}
+    - target: {fileID: 5863277532558854957, guid: 213dda6ca4ba41142b4228c4f5d7fb1c, type: 3}
+      propertyPath: musicaPoder
+      value: 
+      objectReference: {fileID: 8300000, guid: bd30fb837b1aa3c41a6f8bd6f66d4762, type: 3}
+    - target: {fileID: 5863277532558854957, guid: 213dda6ca4ba41142b4228c4f5d7fb1c, type: 3}
+      propertyPath: musicaNormal
+      value: 
+      objectReference: {fileID: 8300000, guid: fb6cf42bc13f5764cb4bb4ffbc3c4f00, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6339,6 +6365,10 @@ PrefabInstance:
       propertyPath: puntaje
       value: 
       objectReference: {fileID: 900843649}
+    - target: {fileID: 8801303743718351302, guid: 00138ef37b4569e4d833ea942085f522, type: 3}
+      propertyPath: sonidoRecolectar
+      value: 
+      objectReference: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
     - target: {fileID: 8896499996134967745, guid: 00138ef37b4569e4d833ea942085f522, type: 3}
       propertyPath: m_Name
       value: PokeballC

@@ -35,7 +35,7 @@ public class Shoot : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyControl>().TakeDamage(damage);
+            //other.GetComponent<EnemyControl>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!114 &89504391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,6 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &146416134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1077,6 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 0}
 --- !u!50 &162928104
 Rigidbody2D:
   serializedVersion: 4
@@ -1215,6 +1218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &202274993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1533,6 +1537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!114 &333156539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1773,6 +1778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &385947182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2164,10 +2170,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb6cf42bc13f5764cb4bb4ffbc3c4f00, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2367,6 +2373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67a4cd98f264de41ad74cd9cf631690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &620899303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2468,6 +2475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &626534608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2866,7 +2874,10 @@ MonoBehaviour:
   animator: {fileID: 891991224}
   muerto: 0
   vida: 1
-  tieneRayo: 0
+  tienePoder: 0
+  musicSource: {fileID: 562581813}
+  musicaNormal: {fileID: 8300000, guid: fb6cf42bc13f5764cb4bb4ffbc3c4f00, type: 3}
+  musicaPoder: {fileID: 8300000, guid: bd30fb837b1aa3c41a6f8bd6f66d4762, type: 3}
 --- !u!50 &891991228
 Rigidbody2D:
   serializedVersion: 4
@@ -2956,7 +2967,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891991223}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2e0bdf0a7adf854b96e68628d043fe5, type: 3}
   m_Name: 
@@ -5201,6 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1010159746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5390,6 +5402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!114 &1024779883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5812,6 +5825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!50 &1030736764
 Rigidbody2D:
   serializedVersion: 4
@@ -5902,6 +5916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1039433748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6127,6 +6142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  sonidoMuerte: {fileID: 8300000, guid: 2eb6f5c22aca68f459d19787e9b1a7a0, type: 3}
 --- !u!114 &1136890231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6398,6 +6414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1196326567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6731,6 +6748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1487346682
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6888,6 +6906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1530096727
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7146,6 +7165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1661554383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7338,6 +7358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1789146601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7683,6 +7704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!1 &1989538017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7833,6 +7855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidadPuntos: 10
   puntaje: {fileID: 900843649}
+  sonidoRecolectar: {fileID: 8300000, guid: 26069322085dd3c47a44a5c620ee7559, type: 3}
 --- !u!212 &1997467829
 SpriteRenderer:
   m_ObjectHideFlags: 0
